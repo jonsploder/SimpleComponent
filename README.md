@@ -1,1 +1,6 @@
-# SimpleComponent
+# Simple component excerpt
+
+Pulled a relatively simple component out of my kanji learning project for demonstration purposes.
+
+Image of result:
+
