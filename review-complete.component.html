@@ -1,0 +1,44 @@
+<div class="root-container noselect">
+  <div class="root-content-container">
+    <div class="container">
+      <div class="session-info shadowed">
+        <h1 class="title">Congratulations!</h1>
+        <div class="review-card">
+          <p>You reviewed <b class="kanji-count">{{sessionTarget}} kanji!</b></p>
+          <hr>
+          <div class="review-stats">
+            <img src="../../../../assets/images/accuracy.png">
+            <p class="stat-description">ACCURACY</p>
+            <p>{{accuracy.toFixed(0)}}%</p>
+
+            <img src="../../../../assets/images/averageTime.png">
+            <p class="stat-description">AVG. REVIEW</p>
+            <p>{{averageTimeTaken.toFixed(1)}}s</p>
+
+            <img src="../../../../assets/images/totalTime.png">
+            <p class="stat-description">TOTAL TIME</p>
+            <p>{{formattedTotalTimeTaken}}</p>
+          </div>
+        </div>
+      </div>
+
+      <ol class="shadowed">
+        <h1 class="title2">Session log</h1>
+        <li *ngFor="let entry of summaryLog" [ngClass]="{'incorrect-bg': !entry.success}">
+          <div class="summary-glyph">{{ entry.glyph }}
+          </div>
+          <div class="summary-description">
+            <div class="summary-keyword">{{ entry.keyword }}</div>
+            <div class="summary-time-taken">{{ (entry.ms_taken / 1000).toFixed(0) }} seconds</div>
+          </div>
+          <div *ngIf="entry.success" class="summary-correct-text">✓</div>
+          <div *ngIf="!entry.success" class="summary-incorrect-text">✕</div>
+        </li>
+      </ol>
+
+      <div class="options">
+        <button id="return-button" (click)="returnToDashboard()" class="shadowed">Return to dashboard</button>
+      </div>
+    </div>
+  </div>
+</div>
