@@ -29,7 +29,7 @@
           </div>
           <div class="summary-description">
             <div class="summary-keyword">{{ entry.keyword }}</div>
-            <div class="summary-time-taken">{{ (entry.ms_taken / 1000).toFixed(0) }} seconds</div>
+            <div class="summary-time-taken">{{ (entry.msTaken / 1000).toFixed(0) }} seconds</div>
           </div>
           <div *ngIf="entry.success" class="summary-correct-text">✓</div>
           <div *ngIf="!entry.success" class="summary-incorrect-text">✕</div>
